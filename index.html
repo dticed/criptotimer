@@ -48,20 +48,65 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <button type="button" class="btn btn-link px-3 mb-1 me-2 text-decoration-none" id="btn-login">Login</button>
+            <button type="button" class="btn btn-link px-3 mb-1 me-2 text-decoration-none" id="btn-login"
+              data-bs-toggle="modal" data-bs-target="#modalLogin">Login</button>
           </li>
           <li class="nav-item">
-            <button type="button" class="btn btn-primary px-4">Sign Up</button>
+            <button type="button" class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#modalSignup">Sign
+              Up</button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Modal -->
-  <div class="modal fade" id="modalDashboard" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal Dashboard -->
+  <div class="modal fade" id="modalDashboard" tabindex="-1">
     <div class="modal-dialog">
-      <div class="alert alert-warning" role="alert">
+      <div class="alert alert-danger" role="alert">
+        You are not logged in!
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Login -->
+  <div class="modal fade" id="modalLogin" tabindex="-2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLogin">Login Page</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="col-md-12">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="col-md-12">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <a href="#">
+            <span>Forgot your password?</span>
+          </a>
+          <div>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Enter</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Login -->
+  <div class="modal fade" id="modalSignup" tabindex="-2">
+    <div class="modal-dialog">
+      <div class="alert alert-danger" role="alert">
         You are not logged in!
       </div>
     </div>
@@ -182,7 +227,7 @@
           <option>Faro</option>
         </select>
       </div>
-      <div class="col md-2">
+      <div class="col-md-2">
         <label for="zip" class="form-label">Zip</label>
         <input type="text" class="form-control">
       </div>
@@ -224,55 +269,12 @@
 
   <!-- footer -->
   <div class="container">
-    <footer class="py-5">
-      <div class="row text-center">
-        <div class="col-sm-12 col-lg-2">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-          </ul>
-        </div>
-
-        <div class="col-sm-12 col-lg-2">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-          </ul>
-        </div>
-
-        <div class="col-sm-12 col-lg-2">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="d-flex justify-content-between py-4 my-4 border-top">
-        <p>© 2021 Company, Inc. All rights reserved.</p>
-        <ul class="list-unstyled d-flex">
-          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-                <use xlink:href="#twitter"></use>
-              </svg></a></li>
-          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-                <use xlink:href="#instagram"></use>
-              </svg></a></li>
-          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-                <use xlink:href="#facebook"></use>
-              </svg></a></li>
-        </ul>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+          <img src="/cripto timer.png" width="80px" alt="">
+        </a>
+        <span class="text-muted">© 2021 Company, Inc</span>
       </div>
     </footer>
   </div>
