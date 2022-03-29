@@ -40,6 +40,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalDashboard">Dashboard</a>
+          </li>
         </ul>
       </div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -54,6 +57,16 @@
       </div>
     </div>
   </nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalDashboard" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="alert alert-warning" role="alert">
+        You are not logged in!
+      </div>
+    </div>
+  </div>
+
 
   <!-- main -->
   <div class="container-fluid d-flex justify-content-center align-items-center" id="home">
@@ -83,14 +96,15 @@
 
   <!-- features -->
   <div class="container-fluid d-flex justify-content-center align-items-center py-5" id="features">
-    <div class="row d-flex justify-content-center align-items-center gx-5">
+    <div class="row d-flex justify-content-center align-items-center gx-3 gy-5 mx-3">
       <div class="col-sm-6 col-md-8 col-lg-3 col-xl-2 text-start text-center">
         <h1 class="mb-3">Feature 1</h1>
-        <div class="card card-cover bg-dark" >
+        <div class="card card-cover bg-dark">
           <img src="./cripto timer.png" class="img-fluid" alt="logo">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
           </div>
         </div>
       </div>
@@ -100,7 +114,8 @@
           <img src="./cripto timer.png" class="card-img-top" alt="logo">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
           </div>
         </div>
       </div>
@@ -110,7 +125,8 @@
           <img src="./cripto timer.png" class="card-img-top" alt="logo">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
           </div>
         </div>
       </div>
@@ -120,7 +136,8 @@
           <img src="./cripto timer.png" class="card-img-top" alt="logo">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
           </div>
         </div>
       </div>
@@ -130,7 +147,7 @@
   <!-- contact -->
   <div class="container-fluid d-flex justify-content-center align-items-center py-5" id="contact">
     <form class="row g-3 px-5">
-      
+
       <!-- input-group -->
       <div class="input-group">
         <span class="input-group-text">@</span>
@@ -219,7 +236,7 @@
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
           </ul>
         </div>
-  
+
         <div class="col-sm-12 col-lg-2">
           <h5>Section</h5>
           <ul class="nav flex-column">
@@ -230,7 +247,7 @@
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
           </ul>
         </div>
-  
+
         <div class="col-sm-12 col-lg-2">
           <h5>Section</h5>
           <ul class="nav flex-column">
@@ -240,27 +257,21 @@
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
           </ul>
-        </div>
-  
-        <div class="col-sm-12 col-md-8 col-lg-4 offset-1">
-          <form>
-            <h5>Subscribe to our newsletter</h5>
-            <p>Monthly digest of whats new and exciting from us.</p>
-            <div class="d-flex w-100 gap-2">
-              <label for="newsletter1" class="visually-hidden">Email address</label>
-              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-              <button class="btn btn-primary" type="button">Subscribe</button>
-            </div>
-          </form>
         </div>
       </div>
-  
+
       <div class="d-flex justify-content-between py-4 my-4 border-top">
         <p>© 2021 Company, Inc. All rights reserved.</p>
         <ul class="list-unstyled d-flex">
-          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#twitter"></use>
+              </svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#instagram"></use>
+              </svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#facebook"></use>
+              </svg></a></li>
         </ul>
       </div>
     </footer>
