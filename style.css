@@ -1,3 +1,7 @@
+body {
+  padding-top: 65px;
+}
+
 .navbar-nav {
   font-family: 'Lato';
   font-size: 1.1em;
@@ -14,7 +18,7 @@
 }
 
 #home {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #2c2f31;
   font-family: 'Fira Code';
   color: #dd5f18;
