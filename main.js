@@ -1,5 +1,6 @@
-let navbarItems = document.querySelector('.navbar-nav')
-
-navbarItems.addEventListener('click', function(e) {
-  console.log(e.target.innerText)
+$(document).ready(function () {
+  $('.navbar-nav li').on('click', 'a', function() {
+    $('.navbar-nav a.active').removeClass('active');
+    $(this).addClass('active');
+  })
 })

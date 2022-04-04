@@ -16,6 +16,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Heebo&family=Jost:wght@400;500&family=Lato:wght@400;700&family=Outfit:wght@400;700&family=Roboto:wght@500&display=swap"
     rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse left-nav" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" href="#home">Home</a>
@@ -96,7 +97,7 @@
           </a>
           <div>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Enter</button>
+            <button type="button" class="btn btn-primary" id="login">Enter</button>
           </div>
         </div>
       </div>
@@ -128,7 +129,7 @@
             <div class="d-grid col-md-12 my-4">
               <button type="button" class="btn btn-secondary">
                 Sign up with Google</button>
-              </div>
+            </div>
           </form>
         </div>
       </div>
@@ -303,6 +304,7 @@
   </div>
 
   <script type="module" src="/main.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>
