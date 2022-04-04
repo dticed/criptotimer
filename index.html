@@ -50,6 +50,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
+            <button type="button" class="btn btn-link px-3 mb-1 me-2 text-decoration-none" id="btn-btc">Get BTC</button>
+          </li>
+          <li class="nav-item">
             <button type="button" class="btn btn-link px-3 mb-1 me-2 text-decoration-none" id="btn-login"
               data-bs-toggle="modal" data-bs-target="#modalLogin">Login</button>
           </li>
@@ -140,12 +143,21 @@
   <!-- main -->
   <div class="container-fluid d-flex justify-content-center align-items-center" id="home">
     <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-sm-12 col-md-6 col-lg-8 text-white text-start">
+      <div class="col-sm-12 col-md-6 col-lg-4 text-white text-start">
         <h1 class="p-3">Criptotimer</h1>
         <h4 class="p-3">In quia enim ut magni internos hic voluptatem eligendi. At saepe porro aut odio eaque ut esse
           reiciendis sed iusto expedita aut adipisci tempora vel modi similique rem pariatur distinctio. Eum mollitia
           voluptatem et quia minus aut consequatur corporis. Eum galisum placeat aut quod adipisci omnis minus? </h4>
         <button type="button" class="btn btn-outline-light mx-3 my-3">Read More</button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 text-white text-start">
+        <div class="card card-cover bg-dark">
+          <img src="./cripto timer.png" class="img-fluid" alt="logo">
+          <div class="card-body">
+            <h5 class="card-title" id="binance">Timer</h5>
+            <p class="class-text" id="binanceText">teste</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -297,7 +309,7 @@
       <div class="col-md-4 d-flex align-items-center justify-content-between">
         <span class="text-muted">© 2021 Company, Inc</span>
       </div>
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+      <a href="#home" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         <img src="/cripto timer.png" width="80px" alt="">
       </a>
     </footer>
