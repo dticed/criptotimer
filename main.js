@@ -4,9 +4,17 @@ $(document).ready(function () {
     $(this).addClass('active')
   })
 
+  refreshValues()
+
+  $('#btnBtc').on('click', () => refreshValues())
+})
+
+function refreshValues() {
+  var table = $('.cryptos-table')
+  table[0].innerHTML = ""
   $.ajax({
     type: 'GET',
-    url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&ids=bitcoin%2C%20ethereum%2C%20solana%2C%20cardano&order=market_cap_desc&per_page=100&page=1&sparkline=false',
+    url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2C%20ethereum%2C%20solana%2C%20cardano&order=market_cap_desc&per_page=100&page=1&sparkline=false',
     success: function (data) {
       data.forEach(element => {
         var tr = $('<tr></tr>')
@@ -36,4 +44,4 @@ $(document).ready(function () {
       console.log(data)
     },
   })
-})
+}
