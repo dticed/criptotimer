@@ -56,3 +56,7 @@ body {
   font-family: 'Fira Code';
   color: #2c2f31;
 }
+
+.crypto-images {
+  width: 20px;
+}
