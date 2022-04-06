@@ -12,7 +12,6 @@ $(document).ready(function () {
 })
 
 function updateValues() {
-  $('#cryptos-table').html('')
   $.ajax({
     type: 'GET',
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2C%20ethereum%2C%20solana%2C%20cardano&order=market_cap_desc&per_page=100&page=1&sparkline=false',
@@ -20,32 +19,40 @@ function updateValues() {
       data.forEach((element) => {
         const crypto = {
           id: element.id,
+          image: element.image,
+          name: element.name,
           current_price: element.current_price,
+          market_cap: element.market_cap,
         }
 
-        createTable(element)
-        checkPrices(apiLocalData, element)
-
+        if (apiLocalData.length < data.length) {
+          createTable(crypto)
+        }
+        
         const index = apiLocalData.findIndex(
           (object) => object.id === element.id
-        )
-
-        if (index === -1) {
-          apiLocalData.push(crypto)
-        } else {
+          )
           
-        }
-      })
+          if (index === -1) {
+            apiLocalData.push(crypto)
+          } else {
+            checkPrices(index, apiLocalData, element)
+          }
+        })
     },
   })
 }
 
-function checkPrices(array, object) {
-  
+function checkPrices(index, array, currentElement) {
+  if (array[index].current_price !== currentElement.current_price) {
+    array[index].current_price = currentElement.current_price
+    updateTable(array[index])
+    console.log('mudou', array[index].id)
+  }
 }
 
 function createTable(element) {
-  var tr = $('<tr></tr>')
+  var tr = $('<tr id="' + element.id + '"></tr>')
   var td1 = $('<td></td>')
   var img = $('<img>')
   img.attr('src', element.image)
@@ -53,7 +60,7 @@ function createTable(element) {
   img.addClass('crypto-images')
   td1.append(img)
 
-  var td2 = $('<td id="' + element.id + '"></td>')
+  var td2 = $('<td></td>')
   td2.append(element.name)
 
   var td3 = $('<td></td>')
@@ -66,5 +73,10 @@ function createTable(element) {
   tr.append(td2)
   tr.append(td3)
   tr.append(td4)
-  $('#cryptos-table').append(tr)
+  $('#cryptosTable').append(tr)
+}
+
+function updateTable(element) {
+  $(`tr[id=${element.id}]`).find('td').eq(2).text(`$${element.current_price}`)
+  $(`tr[id=${element.id}]`).find('td').eq(4).text(`$${element.market_cap}`)
 }
