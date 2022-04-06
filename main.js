@@ -56,7 +56,7 @@ function createTable(element) {
   var td1 = $('<td></td>')
   var img = $('<img>')
   img.attr('src', element.image)
-  img.attr('alt', 'btcLogo')
+  img.attr('alt', `${element.name}logo`)
   img.addClass('crypto-images')
   td1.append(img)
 
