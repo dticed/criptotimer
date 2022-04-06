@@ -50,33 +50,30 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <button type="button" class="btn btn-link px-3 mb-1 me-2 text-decoration-none" id="btnBtc">Get BTC</button>
-          </li>
-          <li class="nav-item">
             <button type="button" class="btn btn-link px-3 mb-1 me-2 text-decoration-none" id="btn-login"
-              data-bs-toggle="modal" data-bs-target="#modalLogin">Login</button>
+            data-bs-toggle="modal" data-bs-target="#modalLogin">Login</button>
           </li>
           <li class="nav-item">
             <button type="button" class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#modalSignup">Sign
               Up</button>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Modal Dashboard -->
+    <div class="modal fade" id="modalDashboard" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="alert alert-danger" role="alert">
+          You are not logged in!
+        </div>
       </div>
     </div>
-  </nav>
-
-  <!-- Modal Dashboard -->
-  <div class="modal fade" id="modalDashboard" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="alert alert-danger" role="alert">
-        You are not logged in!
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Login -->
-  <div class="modal fade" id="modalLogin" tabindex="-2">
-    <div class="modal-dialog modal-dialog-centered">
+    
+    <!-- Modal Login -->
+    <div class="modal fade" id="modalLogin" tabindex="-2">
+      <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modalLogin">Login Page</h5>
@@ -106,7 +103,7 @@
       </div>
     </div>
   </div>
-
+  
   <!-- Modal Sign Up -->
   <div class="modal fade" id="modalSignup" tabindex="-2">
     <div class="modal-dialog modal-dialog-centered">
@@ -132,40 +129,41 @@
             <div class="d-grid col-md-12 my-4">
               <button type="button" class="btn btn-secondary">
                 Sign up with Google</button>
-            </div>
-          </form>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- main -->
-  <div class="container-fluid d-flex justify-content-center align-items-center px-5" id="home">
-    <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-sm-12 col-md-6 col-lg-4 text-white text-start">
-        <h1 class="p-3">Criptotimer</h1>
-        <h4 class="p-3">In quia enim ut magni internos hic voluptatem eligendi. At saepe porro aut odio eaque ut esse
-          reiciendis sed iusto expedita aut adipisci tempora vel modi similique rem pariatur distinctio. Eum mollitia
-          voluptatem et quia minus aut consequatur corporis. Eum galisum placeat aut quod adipisci omnis minus? </h4>
-        <button type="button" class="btn btn-outline-light mx-3 my-3">Read More</button>
+    
+    <!-- main -->
+    <div class="container-fluid d-flex justify-content-center align-items-center px-5" id="home">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-6 col-lg-4 text-white text-start">
+          <h1 class="p-3">Criptotimer</h1>
+          <h4 class="p-3">In quia enim ut magni internos hic voluptatem eligendi. At saepe porro aut odio eaque ut esse
+            reiciendis sed iusto expedita aut adipisci tempora vel modi similique rem pariatur distinctio. Eum mollitia
+            voluptatem et quia minus aut consequatur corporis. Eum galisum placeat aut quod adipisci omnis minus? </h4>
+            <button type="button" class="btn btn-outline-light mx-3 my-3">Read More</button>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <table class="table text-white">
+              <thead>
+                <tr> 
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Current Price</th>
+                  <th scope="col">Market Cap</th>
+                </tr>
+              </thead>
+              <tbody id="cryptosTable">
+              </tbody>
+            </table>
+            <button type="button" class="col-12 btn btn-primary px-3 mb-1 me-2" id="btnBtc">Refresh</button>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-5">
-        <table class="table text-white">
-          <thead>
-            <tr> 
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Current Price</th>
-              <th scope="col">Market Cap</th>
-            </tr>
-          </thead>
-          <tbody id="cryptosTable">
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
+      
   <!-- about -->
   <div class="container-fluid d-flex justify-content-center align-items-center" id="about">
     <div class="row d-flex justify-content-center align-items-center">

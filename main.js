@@ -45,9 +45,15 @@ function updateValues() {
 
 function checkPrices(index, array, currentElement) {
   if (array[index].current_price !== currentElement.current_price) {
+    if(array[index].current_price < currentElement.current_price) {
+      console.log(`${array[index].id} subiu`)
+      $(`tr[id=${currentElement.id}]`).css('color', '#15e720')
+    } else {
+      console.log(`${array[index].id} desceu`)
+      $(`tr[id=${currentElement.id}]`).css('color', 'red')
+    }
     array[index].current_price = currentElement.current_price
     updateTable(array[index])
-    console.log('mudou', array[index].id)
   }
 }
 
@@ -64,7 +70,7 @@ function createTable(element) {
   td2.append(element.name)
 
   var td3 = $('<td></td>')
-  td3.append(element.current_price)
+  td3.append("$"+element.current_price)
 
   var td4 = $('<td></td>')
   td4.append(element.market_cap)
