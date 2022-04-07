@@ -45,20 +45,15 @@ function updateValues() {
 
 function checkPrices(index, array, currentElement) {
   if (array[index].current_price !== currentElement.current_price) {
-    if(array[index].current_price < currentElement.current_price) {
-      console.log(`${array[index].id} subiu`)
-      $(`tr[id=${currentElement.id}]`).css('color', '#15e720')
-    } else {
-      console.log(`${array[index].id} desceu`)
-      $(`tr[id=${currentElement.id}]`).css('color', 'red')
-    }
+    updateColor(index, array, currentElement)
+
     array[index].current_price = currentElement.current_price
     updateTable(array[index])
   }
 }
 
 function createTable(element) {
-  var tr = $('<tr id="' + element.id + '"></tr>')
+  var tr = $(`<tr id=${element.id}>`)
   var td1 = $('<td></td>')
   var img = $('<img>')
   img.attr('src', element.image)
@@ -85,4 +80,14 @@ function createTable(element) {
 function updateTable(element) {
   $(`tr[id=${element.id}]`).find('td').eq(2).text(`$${element.current_price}`)
   $(`tr[id=${element.id}]`).find('td').eq(4).text(`$${element.market_cap}`)
+}
+
+function updateColor(index, array, currentElement) {
+  if(array[index].current_price < currentElement.current_price) {
+    console.log(`${array[index].id} subiu`)
+    $(`tr[id=${array[index].id}]`).css('color', '#15e720')
+  } else {
+    console.log(`${array[index].id} desceu`)
+    $(`tr[id=${array[index].id}]`).css('color', 'red')
+  }
 }
