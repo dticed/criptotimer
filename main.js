@@ -1,20 +1,15 @@
-const apiLocalData = []
+const apiLocalData = [];
 
 $(document).ready(function () {
   $('.navbar-nav li').on('click', 'a', function () {
-    $('.navbar-nav a.active').removeClass('active')
-    $(this).addClass('active')
-  })
-  
-  $('#btnBtc').on('click', updateValues)
+    $('.navbar-nav a.active').removeClass('active');
+    $(this).addClass('active');
+  });
 
-  updateValues()
+  $('#btnBtc').on('click', updateValues);
 
-  setTimeout(() => {
-    console.log('reloading')
-    location.reload(true)
-  }, 20000)
-})
+  updateValues();
+});
 
 function updateValues() {
   $.ajax({
@@ -28,71 +23,74 @@ function updateValues() {
           name: element.name,
           current_price: element.current_price,
           market_cap: element.market_cap,
-        }
+        };
 
         if (apiLocalData.length < data.length) {
-          createTable(crypto)
+          createTable(crypto);
         }
-        
         const index = apiLocalData.findIndex(
           (object) => object.id === element.id
-          )
-          
-          if (index === -1) {
-            apiLocalData.push(crypto)
-          } else {
-            checkPrices(index, apiLocalData, element)
-          }
-        })
+        );
+
+        if (index === -1) {
+          apiLocalData.push(crypto);
+        } else {
+          checkPrices(index, apiLocalData, element);
+        }
+      });
     },
-  })
+  });
+  setTimeout(() => {
+    updateValues()
+    console.log('teste')
+  }, 10000)
 }
 
 function checkPrices(index, array, currentElement) {
   if (array[index].current_price !== currentElement.current_price) {
-    updateColor(index, array, currentElement)
+    updateColor(index, array, currentElement);
 
-    array[index].current_price = currentElement.current_price
-    updateTable(array[index])
+    array[index].current_price = currentElement.current_price;
+    updateTable(array[index]);
   }
 }
 
 function createTable(element) {
-  var tr = $(`<tr id=${element.id}>`)
-  var td1 = $('<td></td>')
-  var img = $('<img>')
-  img.attr('src', element.image)
-  img.attr('alt', `${element.name}logo`)
-  img.addClass('crypto-images')
-  td1.append(img)
+  var tr = $(`<tr id=${element.id}>`);
+  var td1 = $('<td></td>');
+  var img = $('<img>');
+  img.attr('src', element.image);
+  img.attr('alt', `${element.name}logo`);
+  img.addClass('crypto-images');
+  td1.append(img);
 
-  var td2 = $('<td></td>')
-  td2.append(element.name)
+  var td2 = $('<td></td>');
+  td2.append(element.name);
 
-  var td3 = $('<td></td>')
-  td3.append("$"+element.current_price)
+  var td3 = $('<td></td>');
+  td3.append('$' + element.current_price);
 
-  var td4 = $('<td></td>')
-  td4.append(element.market_cap)
+  var td4 = $('<td></td>');
+  td4.append(element.market_cap);
 
-  tr.append(td1)
-  tr.append(td2)
-  tr.append(td3)
-  tr.append(td4)
-  $('#cryptosTable').append(tr)
+  tr.append(td1);
+  tr.append(td2);
+  tr.append(td3);
+  tr.append(td4);
+  $('#cryptosTable').append(tr);
 }
 
 function updateTable(element) {
-  $(`tr[id=${element.id}]`).find('td').eq(2).text(`$${element.current_price}`)
-  $(`tr[id=${element.id}]`).find('td').eq(4).text(`$${element.market_cap}`)
+  $(`tr[id=${element.id}]`).find('td').eq(2).text(`$${element.current_price}`);
+  $(`tr[id=${element.id}]`).find('td').eq(4).text(`$${element.market_cap}`);
 }
 
 function updateColor(index, array, currentElement) {
-  if(array[index].current_price < currentElement.current_price) {
-    console.log(`${array[index].id} subiu`)
-    $(`tr[id=${array[index].id}]`).css('color', '#15e720')
+  if (array[index].current_price < currentElement.current_price) {
+    console.log(`${array[index].id} subiu`);
+    $(`tr[id=${array[index].id}]`).css('color', '#15e720');
   } else {
-    console.log(`${array[index].id} desceu`)
-    $(`tr[id=${array[index].id}]`).css('color', 'red')
+    console.log(`${array[index].id} desceu`);
+    $(`tr[id=${array[index].id}]`).css('color', 'red');
   }
 }
