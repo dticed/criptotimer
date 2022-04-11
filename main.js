@@ -5,10 +5,15 @@ $(document).ready(function () {
     $('.navbar-nav a.active').removeClass('active')
     $(this).addClass('active')
   })
+  
+  $('#btnBtc').on('click', updateValues)
 
   updateValues()
 
-  $('#btnBtc').on('click', updateValues)
+  setTimeout(() => {
+    console.log('reloading')
+    location.reload(true)
+  }, 20000)
 })
 
 function updateValues() {
