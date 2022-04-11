@@ -1,12 +1,17 @@
 const apiLocalData = [];
 
+let timer;
+
 $(document).ready(function () {
   $('.navbar-nav li').on('click', 'a', function () {
     $('.navbar-nav a.active').removeClass('active');
     $(this).addClass('active');
   });
 
-  $('#btnBtc').on('click', updateValues);
+  $('#btnBtc').on('click', () => {
+    clearTimeout(timer)
+    updateValues()
+  });
 
   updateValues();
 });
@@ -40,7 +45,7 @@ function updateValues() {
       });
     },
   });
-  setTimeout(() => {
+  timer = setTimeout(() => {
     updateValues()
     console.log('teste')
   }, 10000)
